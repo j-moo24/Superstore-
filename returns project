@@ -1,0 +1,23 @@
+ #Data_Projects_TripleTen 
+Superstore Returns Project
+
+   1. Project Overview 
+The task is to investigate high return rates at Superstore totaling $785k. I will be creating a value that accounts for returns, and pair it with different factors to see if there are any correlations with 
+a higher return rate. The main KPI will be SUM of Sales. At the end, I will be offering helpful suggestions that will reverse the dramatic losses related to the high return rates. 
+
+2. What was done to the data? 
+The first step was opening the "Returns" data and LEFT JOINING "Orders". The table common to both is Order ID. After this, I created a calculated field titled "Returns Calculated Field". The exact code was 
+ (IF [Returned] = "Yes" THEN 1
+  ELSE 0 
+  END) 
+This specific code only accounts for orders returned, as any other value becomes null. Using the Average "Returns Calculated Field", or return rate, I created multiple data visuals with various tables and the Sum of Sales KPI. The specific tables were category, Indivdual Customer, Sales, 
+Region, and Month. The specifc graphs used were bar charts, scatterplots, a map, a treemap, and a packed bubbles chart. Customers were considered to be active if they had a COUNT "Order ID" > 1. In other words, I filtered out every user id that did not have a single purchase. 
+
+3. Results 
+The only two tables that coorelated high return rates were "Sales" and "Region". I am not concerned about sales. The line of fit in the scatterplot showed only a slight positive trend. This is to be expected. However, the Region coorelation in the West is worth investigation. 
+In the meantime, there are general reasons for returns. These include unclear return policies, sizing issues, customers buying the wrong gift, and the purchasing of multiple products with the intent to return some or all at a later date. Knowing these reasons, I would reccomend advertising clear 
+return policies, especially in the west region. I would propose reevaluating Superstore's website to make sure sizing options are transparent. Finally, I would propose enhanced store credit and exhanges. Implementing these standard protocols will start to correct the dramatic losses resulting from customer returns. 
+
+4. Future Analysis 
+I would like to investigate the west region's correlation with high return rates. Specifically, the big three states Utah, California, and Oregon. Investigation of these three visibily dark states on the map chart may reveal a larger story. Correcting the higher return rates in these states would be instrumental in adressing the 6% 
+return rate and loss of $785k.
